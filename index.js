@@ -36,7 +36,7 @@ app.post('/create/mentor', (req, res) => {
         if (err) {
             return res.send(500, { error: err })
         }
-        return res.send({ 'message': doc.name });
+        return res.send({ ...doc });
     });
 })
 
