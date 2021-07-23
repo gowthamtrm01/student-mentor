@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
 
-const url = 'mongodb+srv://gowtham:Saipallavi@0102@cluster0.wbk9z.mongodb.net/movieData';
+const url = process.env.MONGO_URL || "mongodb://localhost/movieData";
 
 mongoose.connect(url, { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
