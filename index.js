@@ -24,7 +24,7 @@ app.post('/create/student', (req, res) => {
         if (err) {
             return res.send(500, { error: err })
         }
-        return res.send(doc);
+        return res.send({ ...doc });
     });
 })
 
@@ -121,6 +121,7 @@ app.post("/list", async (req, res) => {
     const { mentor } = req.body;
     try {
         const foundMentor = await Mentor.findOne({ 'name': mentor });
+        console.log(foundMentor);
         res.send(foundMentor);
     } catch (err) {
         res.status(500);
