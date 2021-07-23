@@ -6,8 +6,7 @@ const studentSchema = mongoose.Schema({
         required: true
     },
     mentor: {
-        type: String,
-        default: null
+        type: String
     }
 })
 
